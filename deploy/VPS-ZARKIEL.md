@@ -85,7 +85,7 @@ Configuración local:
 cp deploy/deploy.local.cjs.example deploy/deploy.local.cjs
 nano deploy/deploy.local.cjs          # PORT=3012 (o el libre que viste)
 cp deploy/config.example.env .env.production
-nano .env.production                  # mismo PORT=3012
+nano .env.production                  # mismo PORT=3012 (no hace falta archivo ".env")
 chmod +x deploy/build-on-server.sh
 ./deploy/build-on-server.sh
 ```
