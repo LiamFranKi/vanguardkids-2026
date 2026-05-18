@@ -9,6 +9,7 @@ export type Messages = {
   header: { kids: string; academy: string; bookVisit: string };
   hero: {
     badge: string;
+    badgeMobile: string;
     titleBefore: string;
     titleHighlight: string;
     body: string;
@@ -144,6 +145,7 @@ export const messages: Record<Locale, Messages> = {
     },
     hero: {
       badge: "Daycare · Bilingüe · Tecnología con corazón",
+      badgeMobile: "GUARDERÍA BILINGÜE CORAZÓN",
       titleBefore: "Donde el aprendizaje",
       titleHighlight: "cobra vida",
       body: "Explora nuestros dos campus y elige la energía que mejor acompaña a tu familia.",
@@ -341,6 +343,7 @@ export const messages: Record<Locale, Messages> = {
     },
     hero: {
       badge: "Daycare · Bilingual · Heart-led tech",
+      badgeMobile: "DAYCARE BILINGUAL HEART",
       titleBefore: "Where learning",
       titleHighlight: "comes alive",
       body: "Explore both campuses and pick the energy that fits your family best.",

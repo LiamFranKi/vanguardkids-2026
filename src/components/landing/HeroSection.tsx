@@ -21,10 +21,11 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-ink/70 backdrop-blur-md dark:border-white/10 dark:bg-white/5 dark:text-ink/80"
+            className="mb-4 inline-flex max-w-[min(100%,20rem)] items-center gap-2 rounded-full border border-white/60 bg-white/50 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wide text-ink/70 backdrop-blur-md sm:max-w-none sm:px-4 sm:text-xs sm:tracking-widest dark:border-white/10 dark:bg-white/5 dark:text-ink/80"
           >
-            <span className="h-2 w-2 rounded-full bg-mint shadow-[0_0_12px_#3ecfb0]" />
-            {t.hero.badge}
+            <span className="h-2 w-2 shrink-0 rounded-full bg-mint shadow-[0_0_12px_#3ecfb0]" />
+            <span className="whitespace-nowrap sm:hidden">{t.hero.badgeMobile}</span>
+            <span className="hidden sm:inline">{t.hero.badge}</span>
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 18 }}
