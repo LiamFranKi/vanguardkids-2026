@@ -89,6 +89,7 @@ export type Messages = {
   footer: {
     campus: string;
     legal: string;
+    social: string;
     privacy: string;
     terms: string;
     credit: string;
@@ -264,6 +265,7 @@ export const messages: Record<Locale, Messages> = {
     footer: {
       campus: "Campus",
       legal: "Legal",
+      social: "Síguenos",
       privacy: "Política de privacidad",
       terms: "Términos",
       credit: "Hecho con Next.js, Tailwind y cariño para familias Vanguard Kids.",
@@ -460,6 +462,7 @@ export const messages: Record<Locale, Messages> = {
     footer: {
       campus: "Campuses",
       legal: "Legal",
+      social: "Follow us",
       privacy: "Privacy policy",
       terms: "Terms",
       credit: "Built with Next.js, Tailwind, and love for Vanguard Kids families.",

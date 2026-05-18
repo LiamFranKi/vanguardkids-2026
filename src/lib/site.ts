@@ -6,6 +6,18 @@ export const brand = {
 };
 
 /** Archivos en /public */
+/** Redes sociales — actualiza URLs reales aquí o con NEXT_PUBLIC_SOCIAL_* */
+export const social = {
+  instagram:
+    process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM ??
+    "https://www.instagram.com/",
+  facebook:
+    process.env.NEXT_PUBLIC_SOCIAL_FACEBOOK ?? "https://www.facebook.com/",
+  youtube:
+    process.env.NEXT_PUBLIC_SOCIAL_YOUTUBE ?? "https://www.youtube.com/",
+  tiktok: process.env.NEXT_PUBLIC_SOCIAL_TIKTOK ?? "https://www.tiktok.com/",
+};
+
 export const brandAssets = {
   logo: "/logo.png",
   favicon: "/favicon.png",
