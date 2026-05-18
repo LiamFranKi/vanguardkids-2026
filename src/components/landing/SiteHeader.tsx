@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { campuses } from "@/lib/site";
 import { useI18n } from "@/i18n/i18n-context";
 import { BrandLogo } from "@/components/brand/BrandLogo";
+import { LocaleThemeControls } from "@/components/ui/LocaleThemeControls";
 
 export function SiteHeader() {
   const { t } = useI18n();
@@ -36,12 +37,11 @@ export function SiteHeader() {
       }`}
     >
       <div className="pt-[env(safe-area-inset-top,0px)]">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-5 sm:px-6 sm:py-5">
-          <BrandLogo
-            size="header"
-            showName
-            className="self-start sm:self-center"
-          />
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3 sm:gap-4 sm:px-6 sm:py-4 lg:flex-row lg:items-center lg:justify-between lg:gap-5 lg:py-5">
+          <div className="flex w-full items-center justify-between gap-3 lg:w-auto lg:justify-start">
+            <BrandLogo size="header" showName className="min-w-0 flex-1 lg:flex-none" />
+            <LocaleThemeControls className="shrink-0 lg:hidden" layout="row" />
+          </div>
 
           <nav className="hidden items-center gap-1 lg:flex">
             {nav.map((item) => (
@@ -55,7 +55,7 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <div className="flex w-full flex-wrap items-center justify-end gap-1.5 sm:w-auto sm:gap-2">
+          <div className="flex w-full flex-wrap items-center justify-center gap-2 lg:w-auto lg:justify-end">
             <Link href={campuses.kids.path} className={campusBtnClass}>
               {t.header.kids}
             </Link>
@@ -64,7 +64,7 @@ export function SiteHeader() {
             </Link>
             <Link
               href="/#contacto"
-              className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-full bg-ink px-3 py-2 text-xs font-bold text-cream shadow-lg shadow-ink/20 transition hover:bg-ink/90 active:brightness-95 sm:px-4 sm:text-sm dark:shadow-black/40"
+              className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-full bg-ink px-4 py-2 text-xs font-bold text-cream shadow-lg shadow-ink/20 transition hover:bg-ink/90 active:brightness-95 sm:text-sm dark:shadow-black/40"
             >
               {t.header.bookVisit}
             </Link>
