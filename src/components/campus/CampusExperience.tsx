@@ -2,13 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { brandAssets } from "@/lib/site";
 import { useI18n } from "@/i18n/i18n-context";
 
-const shots = [
-  "https://images.unsplash.com/photo-1544776193-352d25ca82cd?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1604881991720-fd128279773e?auto=format&fit=crop&w=600&q=80",
-];
+const shots = [...brandAssets.gallery];
 
 type Accent = "mint" | "lavender";
 

@@ -9,6 +9,11 @@ export const brand = {
 export const brandAssets = {
   logo: "/logo.png",
   favicon: "/favicon.png",
+  /** Fotos propias (public/img1.jpg … img4.jpg) */
+  hero: "/img1.jpg",
+  preschoolHero: "/img2.jpg",
+  academyHero: "/img3.jpg",
+  gallery: ["/img2.jpg", "/img3.jpg", "/img4.jpg"] as const,
 };
 
 export const whatsapp = {

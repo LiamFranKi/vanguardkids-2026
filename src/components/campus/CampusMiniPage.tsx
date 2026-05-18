@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { campuses } from "@/lib/site";
+import { brandAssets, campuses } from "@/lib/site";
 import { useI18n } from "@/i18n/i18n-context";
 import { SiteHeader } from "@/components/landing/SiteHeader";
 import { SiteFooter } from "@/components/landing/SiteFooter";
@@ -69,9 +69,7 @@ export function CampusMiniPage({ variant }: { variant: "kids" | "academy" }) {
             <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-2xl dark:shadow-black/50">
               <Image
                 src={
-                  isKids
-                    ? "https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=900&q=80"
-                    : "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80"
+                  isKids ? brandAssets.preschoolHero : brandAssets.academyHero
                 }
                 alt={
                   isKids

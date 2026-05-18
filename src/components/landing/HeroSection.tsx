@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { brandAssets } from "@/lib/site";
 import { useI18n } from "@/i18n/i18n-context";
 
 export function HeroSection() {
@@ -94,7 +95,7 @@ export function HeroSection() {
           <div className="glass-panel relative overflow-hidden rounded-[2rem] p-3 shadow-2xl shadow-lavender/20 dark:shadow-black/40">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1.6rem] sm:aspect-square">
               <Image
-                src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=900&q=80"
+                src={brandAssets.hero}
                 alt={t.hero.imageAlt}
                 fill
                 priority
