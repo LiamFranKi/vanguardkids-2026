@@ -1,0 +1,13 @@
+/**
+ * Copia en el VPS (NO subas deploy.local.cjs a Git):
+ *   cp deploy/deploy.local.cjs.example deploy/deploy.local.cjs
+ *
+ * VPS Zarkiel: Apache 80/443. Puertos ocupados conocidos:
+ *   - 3010 → vanguard-web-test (/home/vanguard/web-vanguard)
+ *   - 4000 → YaProfe API
+ * Usar uno libre: 3011, 3012, 3020, 4001 (verificar con check-server.sh)
+ */
+module.exports = {
+  DEPLOY_PATH: "/home/vanguard/web-vanguardkids",
+  PORT: 3012,
+};

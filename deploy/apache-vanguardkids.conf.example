@@ -1,0 +1,27 @@
+# Vanguard Kids — Apache VirtualHost (VPS Zarkiel)
+#
+# Apache atiende 80/443. Este archivo es el método correcto en este servidor.
+#
+# 1. Sustituye vanguardkids.com por tu dominio GoDaddy
+# 2. Sustituye 3012 por el PORT de deploy/deploy.local.cjs
+# 3. sudo cp deploy/apache-vanguardkids.conf.example /etc/apache2/sites-available/vanguardkids.com.conf
+# 4. sudo a2enmod proxy proxy_http headers
+# 5. sudo a2ensite vanguardkids.com.conf
+# 6. sudo apache2ctl configtest && sudo systemctl reload apache2
+# 7. sudo certbot --apache -d tudominio.com -d www.tudominio.com
+#
+# NO edites: intranet.*, yaprofe.*, vanguardschools.*, sistema.*, etc.
+
+<VirtualHost *:80>
+    ServerName vanguardkids.com
+    ServerAlias www.vanguardkids.com
+
+    ProxyPreserveHost On
+    RequestHeader set X-Forwarded-Proto "http"
+
+    ProxyPass / http://127.0.0.1:3012/
+    ProxyPassReverse / http://127.0.0.1:3012/
+
+    ErrorLog ${APACHE_LOG_DIR}/vanguardkids.com-error.log
+    CustomLog ${APACHE_LOG_DIR}/vanguardkids.com-access.log combined
+</VirtualHost>

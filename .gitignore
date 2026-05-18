@@ -32,6 +32,10 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+.env.production
+
+# deploy overrides on VPS (paths, ports)
+deploy/deploy.local.cjs
 
 # vercel
 .vercel

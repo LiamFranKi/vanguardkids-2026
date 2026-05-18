@@ -1,13 +1,28 @@
 /**
- * PM2 — Vanguard Kids (producción en VPS)
+ * PM2 — Vanguard Kids (VPS Zarkiel)
  *
- * Antes de editar:
- *   1. Cambia DEPLOY_PATH y PORT (debe coincidir con nginx).
- *   2. Crea .env.production en el servidor (ver config.example.env).
- *   3. Ejecuta deploy/build-on-server.sh o el flujo del README.
+ * Puerto por defecto 3012 (3010 = vanguard-web-test, 4000 = YaProfe).
+ * Copia deploy/deploy.local.cjs.example → deploy/deploy.local.cjs
+ *
+ * Solo: pm2 reload vanguardkids-web  (nunca pm2 restart all)
  */
-const DEPLOY_PATH = "/var/www/vanguardkids";
-const PORT = 3010;
+const path = require("path");
+const fs = require("fs");
+
+const defaults = {
+  DEPLOY_PATH: "/home/vanguard/web-vanguardkids",
+  PORT: 3012,
+};
+
+function loadLocal() {
+  const localPath = path.join(__dirname, "deploy.local.cjs");
+  if (!fs.existsSync(localPath)) return {};
+  return require(localPath);
+}
+
+const local = loadLocal();
+const DEPLOY_PATH = local.DEPLOY_PATH ?? defaults.DEPLOY_PATH;
+const PORT = Number(local.PORT ?? defaults.PORT);
 
 module.exports = {
   apps: [
@@ -26,8 +41,6 @@ module.exports = {
         NODE_ENV: "production",
         PORT: String(PORT),
       },
-      // Opcional: ruta absoluta al .env de producción (PM2 5+)
-      // env_file: `${DEPLOY_PATH}/.env.production`,
     },
   ],
 };
