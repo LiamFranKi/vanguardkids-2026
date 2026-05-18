@@ -20,7 +20,6 @@ export type Messages = {
     statMarketing: string;
     imageAlt: string;
     imageCaption: string;
-    imageBadge: string;
   };
   campusSplit: {
     kicker: string;
@@ -112,8 +111,6 @@ export type Messages = {
     imageAcademyAlt: string;
   };
   campusExperience: {
-    canvasTitle: string;
-    canvasSubtitle: string;
     reelLabel: string;
     curriculumTitle: string;
     curriculumSubtitle: string;
@@ -151,45 +148,44 @@ export const messages: Record<Locale, Messages> = {
       ctaCampus: "Elegir campus",
       ctaAdmission: "Hablar con admisión",
       statCampuses: "campus insignia",
-      statTours: "tours inmersivos",
-      statMarketing: "marketing asistido",
-      imageAlt: "Niños sonriendo en actividad guiada",
-      imageCaption: "Cinemática + renders 3D de salones",
-      imageBadge: "Próx: video hero",
+      statTours: "espacios preparados",
+      statMarketing: "atención personalizada",
+      imageAlt: "Niños en actividades guiadas en Vanguard Kids",
+      imageCaption: "Aprendiendo con alegría cada día",
     },
     campusSplit: {
-      kicker: "Selector dual",
+      kicker: "Nuestros campus",
       title: "Dos experiencias, un mismo estándar de cuidado",
-      body: "Pasa el cursor sobre cada tarjeta: se expanden con profundidad, color y microinteracciones pensadas para padres que buscan lo excepcional.",
+      body: "Elige el ambiente que mejor encaje con la edad y los objetivos de tu familia.",
       kidsBadge: "Enfoque lúdico",
       academyBadge: "Bilingüe · STEAM",
       cta: "Entrar al mini-site",
     },
     bento: {
-      kicker: "Bento grid",
-      title: "Experiencia digital tipo producto tech",
+      kicker: "Por qué Vanguard Kids",
+      title: "Más que un daycare: un nido para crecer",
       intro:
-        "Glassmorphism suave, pastel vibrante y motion que guía la mirada sin ruido. Así se siente un daycare del futuro.",
+        "Combinamos cariño, bilingüismo y rutinas claras para que tu hijo se sienta seguro desde el primer día.",
       items: [
         {
-          title: "Galería inmersiva",
-          desc: "Lightbox cinematográfico, reels verticales y highlights para móvil.",
+          title: "Bilingüismo cada día",
+          desc: "Inglés y español en juego, canciones, rutinas y conversación natural.",
         },
         {
-          title: "Tour 3D / 360°",
-          desc: "WebGL listo para integrar Matterport, Spline o Three.js.",
+          title: "Ambientes seguros",
+          desc: "Salones luminosos, patios y materiales pensados para explorar con confianza.",
         },
         {
-          title: "Currículo vivo",
-          desc: "Niveles con iconos animados: lenguaje, socioemocional, STEAM.",
+          title: "Equipo cercano",
+          desc: "Educadores que conocen a cada niño y comunican con las familias.",
         },
         {
-          title: "Hub de contacto",
-          desc: "Formularios conversacionales, WhatsApp con menú y remarketing.",
+          title: "Adaptación con cariño",
+          desc: "Acompañamos el ingreso paso a paso, con paciencia y seguimiento.",
         },
         {
-          title: "Bots de marketing",
-          desc: "Lead magnet + agendador con Google Calendar y confirmación por WA.",
+          title: "Preparación escolar",
+          desc: "De los primeros pasos al Kindergarten con bases sólidas en STEAM.",
         },
       ],
     },
@@ -206,14 +202,14 @@ export const messages: Record<Locale, Messages> = {
     map: {
       kicker: "Mapa vivo",
       title: "Dos ubicaciones, una promesa de excelencia",
-      hint: "Sustituye los iframes por tus URLs reales de Google Maps Embed en .env o en src/lib/site.ts.",
+      hint: "Visítanos en el campus más cercano a tu familia.",
       campusLabel: "Campus",
       openMaps: "Abrir en Maps",
     },
     lead: {
-      kicker: "Lead magnet (base para tu bot)",
+      kicker: "Recursos para familias",
       title: "Ebook gratuito: 5 claves para la adaptación al daycare",
-      body: "Deja tu correo y te enviamos la guía. Este endpoint ya guarda el lead en consola del servidor; luego conectas CRM, Meta CAPI o tu bot conversacional.",
+      body: "Déjanos tu correo y te enviamos la guía con consejos prácticos para los primeros días.",
       emailLabel: "Correo del papá o la mamá",
       placeholder: "hola@familia.com",
       submit: "Quiero el ebook",
@@ -222,8 +218,8 @@ export const messages: Record<Locale, Messages> = {
       error: "Algo falló. Intenta de nuevo o escríbenos por WhatsApp.",
     },
     contact: {
-      kicker: "Hub de contacto",
-      title: "Formulario que se siente como una conversación",
+      kicker: "Admisiones",
+      title: "Cuéntanos sobre tu familia",
       thanksTitle: "¡Gracias!",
       thanksBody: "Nuestro equipo de admisión te contactará muy pronto.",
       again: "Enviar otro mensaje",
@@ -268,7 +264,7 @@ export const messages: Record<Locale, Messages> = {
       social: "Síguenos",
       privacy: "Política de privacidad",
       terms: "Términos",
-      credit: "Hecho con Next.js, Tailwind y cariño para familias Vanguard Kids.",
+      credit: "Todos los derechos reservados.",
     },
     controls: {
       themeLight: "Tema claro",
@@ -277,19 +273,19 @@ export const messages: Record<Locale, Messages> = {
       langEn: "English",
     },
     campusPage: {
-      miniKicker: "Mini-site",
-      tourKids: "Tour 360° · salones y patio",
+      miniKicker: "Campus",
+      tourKids: "Conoce nuestros espacios",
       tourKidsCopy:
-        "Aquí integrarás Matterport, modelo 3D con Three.js o una escena Spline embebida.",
-      galleryKidsTitle: "Galería & reels",
+        "Salones coloridos, zonas de juego y patios donde los pequeños exploran con alegría y seguridad.",
+      galleryKidsTitle: "Momentos en el aula",
       galleryKidsCopy:
-        "Carrusel vertical estilo Stories para testimonios de mamás y papás.",
-      tourAcademy: "Laboratorios y aulas bilingües en 360°",
+        "Un vistazo a la vida diaria: arte, música, juego libre y primeras palabras en dos idiomas.",
+      tourAcademy: "Aulas y laboratorios bilingües",
       tourAcademyCopy:
-        "Placeholder WebGL: mismo contenedor que en Preschool, con assets propios de Academy.",
-      galleryAcademyTitle: "Proyectos y competencias",
+        "Espacios para lectura, ciencia y proyectos STEAM con rutinas académicas claras.",
+      galleryAcademyTitle: "Aprendizaje en acción",
       galleryAcademyCopy:
-        "Muestra robots, lectoescritura en inglés y evidencias de STEAM.",
+        "Proyectos, lectura en inglés y trabajo en equipo que preparan para el siguiente paso.",
       scheduleTour: "Agendar recorrido",
       requestAdmission: "Solicitar admisión",
       backHub: "← Volver al hub",
@@ -297,12 +293,10 @@ export const messages: Record<Locale, Messages> = {
       imageAcademyAlt: "Estudiantes en ambiente de aprendizaje bilingüe",
     },
     campusExperience: {
-      canvasTitle: "Canvas 360 / Spline",
-      canvasSubtitle: "Sustituye este bloque por tu tour embebido.",
-      reelLabel: "Reel / foto",
-      curriculumTitle: "Currículo por niveles",
+      reelLabel: "Galería",
+      curriculumTitle: "Programa por edades",
       curriculumSubtitle:
-        "Clic en cada tarjeta (próximo: acordeón animado con iconografía Lottie).",
+        "Cada nivel está diseñado para el desarrollo emocional, cognitivo y bilingüe de tu hijo.",
       levelLabel: "Nivel",
       levels: [
         {
@@ -348,45 +342,44 @@ export const messages: Record<Locale, Messages> = {
       ctaCampus: "Choose a campus",
       ctaAdmission: "Talk to admissions",
       statCampuses: "flagship campuses",
-      statTours: "immersive tours",
-      statMarketing: "assisted marketing",
-      imageAlt: "Children smiling during a guided activity",
-      imageCaption: "Cinematic footage + 3D classroom renders",
-      imageBadge: "Next: hero video",
+      statTours: "purpose-built spaces",
+      statMarketing: "personalized care",
+      imageAlt: "Children enjoying guided activities at Vanguard Kids",
+      imageCaption: "Learning with joy every day",
     },
     campusSplit: {
-      kicker: "Dual selector",
+      kicker: "Our campuses",
       title: "Two experiences, one standard of care",
-      body: "Hover each card: depth, color, and micro-interactions designed for families who expect the exceptional.",
+      body: "Choose the setting that best fits your child’s age and your family’s goals.",
       kidsBadge: "Play-first focus",
       academyBadge: "Bilingual · STEAM",
       cta: "Open mini-site",
     },
     bento: {
-      kicker: "Bento grid",
-      title: "A digital experience that feels like a tech product",
+      kicker: "Why Vanguard Kids",
+      title: "More than daycare: a nest to grow",
       intro:
-        "Soft glassmorphism, vibrant pastels, and motion that guides the eye quietly. This is a daycare from the future.",
+        "We blend warmth, bilingual learning, and clear routines so children feel safe from day one.",
       items: [
         {
-          title: "Immersive gallery",
-          desc: "Cinematic lightbox, vertical reels, and mobile-first highlights.",
+          title: "Daily bilingualism",
+          desc: "English and Spanish through play, songs, routines, and natural conversation.",
         },
         {
-          title: "3D / 360° tour",
-          desc: "WebGL-ready for Matterport, Spline, or Three.js embeds.",
+          title: "Safe environments",
+          desc: "Bright classrooms, playgrounds, and materials built for confident exploration.",
         },
         {
-          title: "Living curriculum",
-          desc: "Levels with animated icons: language, SEL, and STEAM.",
+          title: "Caring team",
+          desc: "Teachers who know each child and stay in touch with families.",
         },
         {
-          title: "Contact hub",
-          desc: "Conversational forms, WhatsApp menu, and remarketing hooks.",
+          title: "Gentle onboarding",
+          desc: "We support the transition step by step, with patience and follow-up.",
         },
         {
-          title: "Marketing bots",
-          desc: "Lead magnet + Google Calendar scheduling with WA confirmations.",
+          title: "School readiness",
+          desc: "Strong foundations in STEAM from early years through Kindergarten prep.",
         },
       ],
     },
@@ -403,14 +396,14 @@ export const messages: Record<Locale, Messages> = {
     map: {
       kicker: "Live map",
       title: "Two locations, one promise of excellence",
-      hint: "Replace the iframes with your real Google Maps Embed URLs in .env or src/lib/site.ts.",
+      hint: "Visit us at the campus closest to your family.",
       campusLabel: "Campus",
       openMaps: "Open in Maps",
     },
     lead: {
-      kicker: "Lead magnet (bot-ready)",
+      kicker: "Resources for families",
       title: "Free ebook: 5 keys to daycare adaptation",
-      body: "Share your email and we’ll send the guide. This endpoint logs the lead server-side; next, plug in your CRM, Meta CAPI, or chatbot.",
+      body: "Share your email and we’ll send practical tips for the first days at daycare.",
       emailLabel: "Parent email",
       placeholder: "hello@family.com",
       submit: "Send me the ebook",
@@ -419,8 +412,8 @@ export const messages: Record<Locale, Messages> = {
       error: "Something went wrong. Try again or message us on WhatsApp.",
     },
     contact: {
-      kicker: "Contact hub",
-      title: "A form that feels like a conversation",
+      kicker: "Admissions",
+      title: "Tell us about your family",
       thanksTitle: "Thank you!",
       thanksBody: "Our admissions team will reach out very soon.",
       again: "Send another message",
@@ -465,7 +458,7 @@ export const messages: Record<Locale, Messages> = {
       social: "Follow us",
       privacy: "Privacy policy",
       terms: "Terms",
-      credit: "Built with Next.js, Tailwind, and love for Vanguard Kids families.",
+      credit: "All rights reserved.",
     },
     controls: {
       themeLight: "Light theme",
@@ -474,19 +467,19 @@ export const messages: Record<Locale, Messages> = {
       langEn: "English",
     },
     campusPage: {
-      miniKicker: "Mini-site",
-      tourKids: "360° tour · classrooms & playground",
+      miniKicker: "Campus",
+      tourKids: "Explore our spaces",
       tourKidsCopy:
-        "Embed Matterport, a Three.js model, or a Spline scene right here.",
-      galleryKidsTitle: "Gallery & reels",
+        "Colorful classrooms, play zones, and outdoor areas where children learn with joy and safety.",
+      galleryKidsTitle: "Classroom moments",
       galleryKidsCopy:
-        "Vertical Stories-style carousel for parent testimonials.",
-      tourAcademy: "Labs & bilingual classrooms in 360°",
+        "Daily life: art, music, free play, and first words in two languages.",
+      tourAcademy: "Bilingual classrooms & labs",
       tourAcademyCopy:
-        "WebGL placeholder: same container as Preschool, with Academy assets.",
-      galleryAcademyTitle: "Projects & competencies",
+        "Spaces for reading, science, and STEAM projects with clear academic routines.",
+      galleryAcademyTitle: "Learning in action",
       galleryAcademyCopy:
-        "Show robots, English literacy milestones, and STEAM evidence.",
+        "Projects, English literacy, and teamwork that prepare kids for what’s next.",
       scheduleTour: "Book a tour",
       requestAdmission: "Request admission",
       backHub: "← Back to hub",
@@ -494,12 +487,10 @@ export const messages: Record<Locale, Messages> = {
       imageAcademyAlt: "Students in a bilingual learning environment",
     },
     campusExperience: {
-      canvasTitle: "360 canvas / Spline",
-      canvasSubtitle: "Replace this block with your embedded tour.",
-      reelLabel: "Reel / photo",
-      curriculumTitle: "Curriculum by levels",
+      reelLabel: "Gallery",
+      curriculumTitle: "Programs by age",
       curriculumSubtitle:
-        "Tap each card (next: animated accordion + Lottie icons).",
+        "Each level supports your child’s emotional, cognitive, and bilingual growth.",
       levelLabel: "Level",
       levels: [
         {

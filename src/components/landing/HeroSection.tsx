@@ -103,13 +103,10 @@ export function HeroSection() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent dark:from-ink/70" />
-              <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
-                <p className="font-display text-sm font-bold text-white drop-shadow">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/70 via-ink/30 to-transparent px-4 pb-4 pt-12">
+                <p className="text-center font-display text-sm font-bold text-white drop-shadow">
                   {t.hero.imageCaption}
                 </p>
-                <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-ink shadow dark:bg-ink/90 dark:text-cream">
-                  {t.hero.imageBadge}
-                </span>
               </div>
             </div>
           </div>

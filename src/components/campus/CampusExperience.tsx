@@ -46,14 +46,18 @@ export function CampusExperience({
             viewport={{ once: true }}
             className={`relative aspect-video overflow-hidden rounded-[2rem] bg-ink/5 ring-8 ${accentRing[accent]} shadow-2xl dark:bg-white/5`}
           >
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-ink/80 to-ink/40 p-6 text-center text-cream">
-              <p className="font-display text-lg font-bold">
-                {t.campusExperience.canvasTitle}
-              </p>
-              <p className="text-sm text-cream/75">
-                {t.campusExperience.canvasSubtitle}
-              </p>
-            </div>
+            <Image
+              src={shots[0]}
+              alt={tourTitle}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/20 to-transparent" />
+            <p className="absolute inset-x-0 bottom-0 p-6 text-center font-display text-lg font-bold text-white drop-shadow">
+              {tourTitle}
+            </p>
           </motion.div>
         </div>
       </section>
