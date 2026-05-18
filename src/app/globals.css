@@ -1,26 +1,146 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cream: #fffbf5;
+  --ink: #14122a;
+  --mint: #3ecfb0;
+  --mint-soft: #c9f7ec;
+  --sun: #ffd963;
+  --sun-soft: #fff3d4;
+  --lavender: #a78bfa;
+  --lavender-soft: #ede9fe;
+  --coral: #fb7185;
+  --glass: rgba(255, 255, 255, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.55);
+  --mesh: radial-gradient(
+      at 0% 0%,
+      var(--lavender-soft) 0,
+      transparent 55%
+    ),
+    radial-gradient(at 100% 0%, var(--mint-soft) 0, transparent 50%),
+    radial-gradient(at 100% 100%, var(--sun-soft) 0, transparent 55%),
+    radial-gradient(at 0% 100%, #fce7f3 0, transparent 45%);
+}
+
+.dark {
+  --cream: #0c0b14;
+  --ink: #f3f0ff;
+  --mint: #5ee4c8;
+  --mint-soft: #133a32;
+  --sun: #e8c45c;
+  --sun-soft: #3d3420;
+  --lavender: #b9a3ff;
+  --lavender-soft: #2a2242;
+  --coral: #ff8ba3;
+  --glass: rgba(255, 255, 255, 0.07);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --mesh: radial-gradient(
+      at 0% 0%,
+      var(--lavender-soft) 0,
+      transparent 50%
+    ),
+    radial-gradient(at 100% 0%, var(--mint-soft) 0, transparent 45%),
+    radial-gradient(at 100% 100%, #1e1838 0, transparent 50%),
+    radial-gradient(at 0% 100%, #2a1630 0, transparent 45%);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --color-mint: var(--mint);
+  --color-mint-soft: var(--mint-soft);
+  --color-sun: var(--sun);
+  --color-sun-soft: var(--sun-soft);
+  --color-lavender: var(--lavender);
+  --color-lavender-soft: var(--lavender-soft);
+  --color-coral: var(--coral);
+  --font-sans: var(--font-dm);
+  --font-display: var(--font-nunito);
+  --background-image-mesh: var(--mesh);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  /* Cabecera fija + notch (iPhone); anclas no quedan tapadas */
+  scroll-padding-top: max(6.5rem, calc(5rem + env(safe-area-inset-top, 0px)));
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-dm), system-ui, sans-serif;
+}
+
+/* Menos retraso 300ms en toques (iOS) en controles principales */
+button,
+a[href],
+input[type="submit"],
+[role="button"] {
+  touch-action: manipulation;
+}
+
+.font-display {
+  font-family: var(--font-nunito), var(--font-dm), system-ui, sans-serif;
+}
+
+.glass-panel {
+  background: var(--glass);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px rgba(20, 18, 42, 0.08);
+}
+
+.dark .glass-panel {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.mesh-bg {
+  background-image: var(--mesh);
+  background-color: var(--cream);
+}
+
+.noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.dark .noise::before {
+  opacity: 0.07;
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-float {
+  animation: float-soft 6s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background-size: 200% 200%;
+  animation: shimmer 8s ease infinite;
 }

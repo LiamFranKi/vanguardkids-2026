@@ -1,0 +1,52 @@
+/** Centraliza enlaces: ajusta teléfonos, URLs de mapas y WhatsApp aquí. */
+
+/** Marca principal del sitio (hub). */
+export const brand = {
+  name: "Vanguard Kids",
+};
+
+/** Archivos en /public */
+export const brandAssets = {
+  logo: "/logo.png",
+  favicon: "/favicon.png",
+};
+
+export const whatsapp = {
+  /** Formato internacional sin + ni espacios, ej: 573001234567 */
+  admission: process.env.NEXT_PUBLIC_WA_ADMISSION ?? "573000000000",
+  families: process.env.NEXT_PUBLIC_WA_FAMILIES ?? "573000000000",
+};
+
+export function waLink(phone: string, text: string) {
+  const q = encodeURIComponent(text);
+  return `https://wa.me/${phone}?text=${q}`;
+}
+
+export const campuses = {
+  kids: {
+    slug: "vanguard-kids",
+    path: "/vanguard-kids",
+    title: "Vanguard Kids Preschool",
+    short: "Juego, emoción y primeras palabras en dos idiomas.",
+    accent: "kids" as const,
+    mapsQuery: "Vanguard Kids Preschool",
+    mapsOpenUrl:
+      "https://www.google.com/maps/place/Vanguard+Kids/@27.9676121,-82.2511004,17z/data=!4m14!1m7!3m6!1s0x88c2cdbbed7bc68f:0x9e6743835393a9ac!2sVanguard+Kids!8m2!3d27.9676121!4d-82.2511004!16s%2Fg%2F11jj0_mykd!3m5!1s0x88c2cdbbed7bc68f:0x9e6743835393a9ac!8m2!3d27.9676121!4d-82.2511004!16s%2Fg%2F11jj0_mykd?entry=ttu",
+    mapsEmbedUrl:
+      process.env.NEXT_PUBLIC_MAPS_EMBED_KIDS ??
+      "https://www.google.com/maps?q=27.9676121,-82.2511004&hl=en&z=17&output=embed",
+  },
+  academy: {
+    slug: "vanguard-kids-academy",
+    path: "/vanguard-kids-academy",
+    title: "Vanguard Kids Academy",
+    short: "Rutina académica sólida, STEAM y inglés todos los días.",
+    accent: "academy" as const,
+    mapsQuery: "Vanguard Kids Academy",
+    mapsOpenUrl:
+      "https://www.google.com/maps/place/Vanguard+Kids+Academy/@26.672253,-81.8164567,17z/data=!4m14!1m7!3m6!1s0x88db69ce2d2ae7e9:0x6191c08a53c6eb33!2sVanguard+Kids+Academy!8m2!3d26.672253!4d-81.8164567!16s%2Fg%2F11wvz5f0h9!3m5!1s0x88db69ce2d2ae7e9:0x6191c08a53c6eb33!8m2!3d26.672253!4d-81.8164567!16s%2Fg%2F11wvz5f0h9?entry=ttu",
+    mapsEmbedUrl:
+      process.env.NEXT_PUBLIC_MAPS_EMBED_ACADEMY ??
+      "https://www.google.com/maps?q=26.672253,-81.8164567&hl=en&z=17&output=embed",
+  },
+};
