@@ -3,19 +3,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { campuses } from "@/lib/site";
 import { useI18n } from "@/i18n/i18n-context";
 
 export function HeroSection() {
   const { t } = useI18n();
 
   return (
-    <section className="relative min-h-[100dvh] min-h-[100svh] overflow-hidden pt-[max(8.25rem,calc(7rem+env(safe-area-inset-top,0px)))] sm:pt-28 lg:pt-28">
+    <section className="relative overflow-hidden pt-[max(8.25rem,calc(7rem+env(safe-area-inset-top,0px)))] pb-6 sm:pt-28 sm:pb-10 lg:pb-12">
       <div className="absolute inset-0 mesh-bg noise" />
       <div className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-lavender/25 blur-3xl dark:bg-lavender/15" />
       <div className="pointer-events-none absolute -right-24 bottom-20 h-80 w-80 rounded-full bg-mint/30 blur-3xl dark:bg-mint/15" />
 
-      <div className="relative mx-auto grid max-w-6xl gap-8 px-4 pb-16 pt-6 sm:gap-10 sm:px-6 sm:pt-8 lg:grid-cols-2 lg:items-center lg:gap-12 lg:pb-24">
+      <div className="relative mx-auto grid max-w-6xl gap-8 px-4 pt-6 sm:gap-10 sm:px-6 sm:pt-8 lg:grid-cols-2 lg:items-center lg:gap-12">
         <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -119,20 +118,6 @@ export function HeroSection() {
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
           />
-        </motion.div>
-      </div>
-
-      <div className="relative mx-auto flex max-w-6xl justify-center px-4 pb-10 sm:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.45 }}
-          className="flex items-center gap-2 text-center text-xs font-medium text-ink/50 dark:text-ink/45"
-        >
-          <span className="h-px w-10 bg-gradient-to-r from-transparent to-ink/20 dark:to-ink/40" />
-          {t.hero.scrollHint} {campuses.kids.title} {t.hero.scrollBetween}{" "}
-          {campuses.academy.title}
-          <span className="h-px w-10 bg-gradient-to-l from-transparent to-ink/20 dark:to-ink/40" />
         </motion.div>
       </div>
     </section>

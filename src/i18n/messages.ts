@@ -21,8 +21,6 @@ export type Messages = {
     imageAlt: string;
     imageCaption: string;
     imageBadge: string;
-    scrollHint: string;
-    scrollBetween: string;
   };
   campusSplit: {
     kicker: string;
@@ -157,8 +155,6 @@ export const messages: Record<Locale, Messages> = {
       imageAlt: "Niños sonriendo en actividad guiada",
       imageCaption: "Cinemática + renders 3D de salones",
       imageBadge: "Próx: video hero",
-      scrollHint: "Desliza para conocer",
-      scrollBetween: "y",
     },
     campusSplit: {
       kicker: "Selector dual",
@@ -355,8 +351,6 @@ export const messages: Record<Locale, Messages> = {
       imageAlt: "Children smiling during a guided activity",
       imageCaption: "Cinematic footage + 3D classroom renders",
       imageBadge: "Next: hero video",
-      scrollHint: "Scroll to explore",
-      scrollBetween: "and",
     },
     campusSplit: {
       kicker: "Dual selector",
