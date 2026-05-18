@@ -19,7 +19,7 @@ export function CampusMiniPage({ variant }: { variant: "kids" | "academy" }) {
     <>
       <SiteHeader />
       <main className="flex-1 pb-28 sm:pb-32">
-        <section className="relative overflow-hidden pt-[max(7rem,calc(5.5rem+env(safe-area-inset-top,0px)))] sm:pt-28">
+        <section className="relative overflow-hidden pt-[max(10.5rem,calc(9rem+env(safe-area-inset-top,0px)))] sm:pt-32 lg:pt-28">
           <div
             className={`absolute inset-0 ${
               isKids
@@ -34,8 +34,8 @@ export function CampusMiniPage({ variant }: { variant: "kids" | "academy" }) {
                 : "left-0 bg-lavender/35 dark:bg-lavender/20"
             }`}
           />
-          <div className="relative mx-auto grid max-w-6xl gap-10 px-4 pb-16 sm:px-6 lg:grid-cols-2 lg:items-center">
-            <div>
+          <div className="relative mx-auto grid max-w-6xl gap-10 px-4 pb-16 pt-2 sm:px-6 sm:pt-0 lg:grid-cols-2 lg:items-center">
+            <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
               <p
                 className={`text-xs font-bold uppercase tracking-widest ${
                   isKids ? "text-mint" : "text-lavender"
