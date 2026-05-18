@@ -29,9 +29,9 @@ export const brandAssets = {
 };
 
 export const whatsapp = {
-  /** Formato internacional sin + ni espacios, ej: 573001234567 */
-  admission: process.env.NEXT_PUBLIC_WA_ADMISSION ?? "573000000000",
-  families: process.env.NEXT_PUBLIC_WA_FAMILIES ?? "573000000000",
+  /** Formato internacional sin + ni espacios — +1 407 963 1784 */
+  admission: process.env.NEXT_PUBLIC_WA_ADMISSION ?? "14079631784",
+  families: process.env.NEXT_PUBLIC_WA_FAMILIES ?? "14079631784",
 };
 
 export function waLink(phone: string, text: string) {
